@@ -11,10 +11,12 @@ class _HomeState extends State<Home> {
   TextEditingController _emailControll = TextEditingController();
   TextEditingController _passControll = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  bool autoValidator;
 
   @override
   void initState() {
     observe = true;
+    autoValidator = false;
     super.initState();
   }
 
@@ -98,7 +100,6 @@ class _HomeState extends State<Home> {
                                   color: MyColors.textColor, fontSize: 18),
                               decoration: InputDecoration(
                                 labelText: 'Email',
-                                errorStyle: TextStyle(color: Colors.black),
                               ),
                             ),
                           ),
@@ -113,7 +114,6 @@ class _HomeState extends State<Home> {
                               cursorColor: MyColors.priamryColor,
                               decoration: InputDecoration(
                                   labelText: 'Password',
-                                  errorStyle: TextStyle(color: Colors.black),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                       Icons.remove_red_eye,
@@ -210,7 +210,7 @@ class _HomeState extends State<Home> {
                             TextSpan(
                               text: ' SIGN UP',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w700,
                                   fontSize: 15,
                                   color: MyColors.homeText),
                             ),

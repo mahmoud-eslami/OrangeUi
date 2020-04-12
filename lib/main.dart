@@ -51,7 +51,7 @@ class AppTheme {
       errorStyle: TextStyle(
         fontSize: 11,
         fontWeight: FontWeight.normal,
-        color: Colors.red,
+        color: Colors.black,
       ),
     ),
     primaryColor: Colors.deepOrange[100],
