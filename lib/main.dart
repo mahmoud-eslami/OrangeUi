@@ -34,9 +34,12 @@ class AppTheme {
       errorMaxLines: 1,
       helperMaxLines: 1,
       focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: MyColors.priamryColor),
+      ),
+      focusedErrorBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: MyColors.priamryColor
-        )
+          color: Colors.black,
+        ),
       ),
       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       isDense: true,
