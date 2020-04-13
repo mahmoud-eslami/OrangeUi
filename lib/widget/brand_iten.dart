@@ -29,6 +29,7 @@ class BrandItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Stack(
         alignment: Alignment.centerLeft,
         children: <Widget>[
@@ -36,7 +37,7 @@ class BrandItem extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Container(
               height: 130,
-              width: 330,
+              width: 300,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(
@@ -65,11 +66,11 @@ class BrandItem extends StatelessWidget {
                         Text(caption,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 10,color: Colors.grey),),
                       ],
                     ),
-                    SizedBox(width: 50,),
+                    SizedBox(width: 30,),
                     GradientButton(
                         shadowColor: btnShadowColor,
                         title: btnTitle,
-                        onTap: onTapBtn)
+                        onTap: onTapBtn,)
                   ],
                 ),
               ),
@@ -78,8 +79,8 @@ class BrandItem extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
-              height: 100,
-              width: 100,
+              height: 80,
+              width: 80,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(
