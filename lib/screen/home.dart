@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:orange_ui/resource/color/color.dart';
 import 'package:orange_ui/screen/food_spec.dart';
+import 'package:orange_ui/widget/gradient_btn.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -143,63 +144,28 @@ class _HomeState extends State<Home> {
                                 Colors.grey.withOpacity(.2),
                               ),
                               SizedBox(
-                                width: 15,
+                                width: 60,
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(8),
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color:
-                                          MyColors.primaryColor.withOpacity(.8),
-                                      blurRadius: 15,
-                                      offset: Offset(0, 6),
-                                      spreadRadius: 1,
-                                    )
-                                  ],
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      MyColors.backGradientHighColor,
-                                      MyColors.backGradientMediumColor,
-                                      MyColors.backGradientLowColor,
-                                    ],
-                                    stops: [0.1, 0.5, 0.7],
-                                  ),
-                                ),
-                                child: RaisedButton(
-                                  onPressed: () {
-                                    if (!autoValidator) {
-                                      setState(() {
-                                        autoValidator = !autoValidator;
-                                      });
-                                    }
-                                    if (_formKey.currentState.validate()) {
-                                      _formKey.currentState.save();
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => PageManager(),
-                                        ),
-                                      );
-                                    }
-                                  },
-                                  color: Colors.transparent,
-                                  elevation: 0,
-                                  disabledElevation: 0,
-                                  highlightElevation: 0,
-                                  child: Text(
-                                    'Sing In',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 15,
-                                        color: MyColors.homeText),
-                                  ),
-                                ),
-                              ),
+                              GradientButton(
+                                shadowColor: MyColors.primaryColor,
+                                title: 'Sign In',
+                                onTap: () {
+                                  if (!autoValidator) {
+                                    setState(() {
+                                      autoValidator = !autoValidator;
+                                    });
+                                  }
+                                  if (_formKey.currentState.validate()) {
+                                    _formKey.currentState.save();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => PageManager(),
+                                      ),
+                                    );
+                                  }
+                                },
+                              )
                             ],
                           )
                         ],

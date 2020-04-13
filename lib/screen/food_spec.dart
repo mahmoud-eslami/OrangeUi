@@ -115,6 +115,32 @@ class _FoodSpecState extends State<FoodSpec> {
                       fontSize: 35,
                       fontWeight: FontWeight.bold),
                 ),
+                SizedBox(height: 20,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        width: 250,
+                        height: 400,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: MyColors.primaryColor.withOpacity(.2),
+                              blurRadius: 15,
+                              offset: Offset(0, 15),
+                              spreadRadius: 1,
+                            )
+                          ],
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -123,6 +149,3 @@ class _FoodSpecState extends State<FoodSpec> {
     );
   }
 }
-
-
-
