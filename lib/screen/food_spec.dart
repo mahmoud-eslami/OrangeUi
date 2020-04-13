@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:orange_ui/resource/color/color.dart';
 import 'package:orange_ui/screen/food_list.dart';
+import 'package:orange_ui/screen/third_page.dart';
+
+import 'forth_page.dart';
 
 class PageManager extends StatefulWidget {
   @override
@@ -96,7 +100,7 @@ class _FoodSpecState extends State<FoodSpec> {
                       size: 30,
                     ),
                     Icon(
-                      Icons.search,
+                      CupertinoIcons.search,
                       size: 30,
                     ),
                   ],
@@ -106,7 +110,10 @@ class _FoodSpecState extends State<FoodSpec> {
                 ),
                 Text(
                   'Offers',
-                  style: TextStyle(color: MyColors.textColor, fontSize: 35),
+                  style: TextStyle(
+                      color: MyColors.textColor,
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -117,26 +124,5 @@ class _FoodSpecState extends State<FoodSpec> {
   }
 }
 
-class ThirdPage extends StatefulWidget {
-  @override
-  _ThirdPageState createState() => _ThirdPageState();
-}
 
-class _ThirdPageState extends State<ThirdPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
 
-class ForthPage extends StatefulWidget {
-  @override
-  _ForthPageState createState() => _ForthPageState();
-}
-
-class _ForthPageState extends State<ForthPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
