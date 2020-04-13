@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orange_ui/resource/color/color.dart';
+import 'package:orange_ui/screen/food_spec.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
                           color: MyColors.homeText),
                     ),
                     SizedBox(
-                      height: 70,
+                      height: 50,
                     ),
                     Container(
                       padding:
@@ -128,20 +129,21 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           SizedBox(
-                            height: 100,
+                            height: 70,
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              materialPic('assets/image/f.png',
-                                  Colors.blueAccent.withOpacity(.2)),
-                              SizedBox(
-                                width: 16,
+                              materialPic(
+                                'assets/image/f.png',
+                                Colors.blueAccent.withOpacity(.2),
                               ),
-                              materialPic('assets/image/g.png',
-                                  Colors.grey.withOpacity(.2)),
+                              materialPic(
+                                'assets/image/g.png',
+                                Colors.grey.withOpacity(.2),
+                              ),
                               SizedBox(
-                                width: 80,
+                                width: 15,
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -170,8 +172,19 @@ class _HomeState extends State<Home> {
                                 ),
                                 child: RaisedButton(
                                   onPressed: () {
+                                    if (!autoValidator) {
+                                      setState(() {
+                                        autoValidator = !autoValidator;
+                                      });
+                                    }
                                     if (_formKey.currentState.validate()) {
                                       _formKey.currentState.save();
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => FoodSpec(),
+                                        ),
+                                      );
                                     }
                                   },
                                   color: Colors.transparent,
@@ -193,7 +206,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     SizedBox(
-                      height: 60,
+                      height: 50,
                     ),
                     Align(
                       alignment: Alignment.center,
