@@ -8,14 +8,18 @@ class PageManager extends StatefulWidget {
 }
 
 class _PageManagerState extends State<PageManager> {
-  int currentIndex;
+  int currentIndex = 0;
 
   List<Widget> pages = [FoodSpec(), FoodList(), ThirdPage(), ForthPage()];
 
+  void onTabTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   void initState() {
-    // TODO: implement initState
-    currentIndex = 0;
     super.initState();
   }
 
@@ -39,11 +43,7 @@ class _PageManagerState extends State<PageManager> {
         selectedIconTheme: IconThemeData(color: MyColors.primaryColor),
         unselectedIconTheme:
             IconThemeData(color: MyColors.disableButton.withOpacity(.4)),
-        onTap: (index){
-          setState(() {
-            currentIndex = index;
-          });
-        },
+        onTap: onTabTapped,
       ),
       body: pages[currentIndex],
     );
@@ -84,18 +84,30 @@ class _FoodSpecState extends State<FoodSpec> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(Icons.menu,size: 30,),
-                    Icon(Icons.search,size: 30,),
+                    Icon(
+                      Icons.menu,
+                      size: 30,
+                    ),
+                    Icon(
+                      Icons.search,
+                      size: 30,
+                    ),
                   ],
                 ),
-                Text('Offers',style: TextStyle(color: MyColors.textColor,fontSize: 35),)
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Offers',
+                  style: TextStyle(color: MyColors.textColor, fontSize: 35),
+                ),
               ],
             ),
           ),
