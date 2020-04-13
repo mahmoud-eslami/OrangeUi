@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:orange_ui/resource/color/color.dart';
 import 'package:orange_ui/screen/food_list.dart';
 import 'package:orange_ui/screen/third_page.dart';
+import 'package:orange_ui/widget/gradient_btn.dart';
 
 import 'forth_page.dart';
 
@@ -115,14 +116,28 @@ class _FoodSpecState extends State<FoodSpec> {
                       fontSize: 35,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20,),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height,
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 430,
                   child: Stack(
                     children: <Widget>[
+                      Center(
+                        child: Container(
+                          width: 300,
+                          height: 340,
+                          decoration: BoxDecoration(
+                            color: MyColors.primaryColor.withOpacity(.1),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                      ),
                       Container(
-                        width: 250,
-                        height: 400,
+                        width: 300,
+                        height: 500,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
@@ -131,13 +146,84 @@ class _FoodSpecState extends State<FoodSpec> {
                             BoxShadow(
                               color: MyColors.primaryColor.withOpacity(.2),
                               blurRadius: 15,
-                              offset: Offset(0, 15),
-                              spreadRadius: 1,
+                              offset: Offset(0, 10),
+                              spreadRadius: .2,
                             )
                           ],
                           color: Colors.white,
                         ),
-                      )
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 310,
+                              width: MediaQuery.of(context).size.width,
+                              child: Material(
+                                child: Image.asset(
+                                  'assets/image/pizza.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                                clipBehavior: Clip.antiAlias,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 17),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Fellini\'s Dining',
+                                        style: TextStyle(
+                                            color: MyColors.textColor,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: 'Price to',
+                                              style: TextStyle(
+                                                color: MyColors.textColor,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: ' 50% Off',
+                                              style: TextStyle(
+                                                color: MyColors.primaryColor,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  GradientButton(
+                                      shadowColor: MyColors.primaryColor,
+                                      title: 'Info',
+                                      onTap: () {}),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
