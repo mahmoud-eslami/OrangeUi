@@ -42,9 +42,9 @@ class _HomeState extends State<Home> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                MyColors.backGradiantHighColor,
-                MyColors.backGradiantMediumColor,
-                MyColors.backGradiantLowColor,
+                MyColors.backGradientHighColor,
+                MyColors.backGradientMediumColor,
+                MyColors.backGradientLowColor,
               ],
               stops: [0.1, 0.5, 0.7],
             ),
@@ -96,7 +96,7 @@ class _HomeState extends State<Home> {
                               controller: _emailControll,
                               validator: (v) =>
                                   v.isEmpty ? 'Fill Here Please' : null,
-                              cursorColor: MyColors.priamryColor,
+                              cursorColor: MyColors.primaryColor,
                               style: TextStyle(
                                   color: MyColors.textColor, fontSize: 18),
                               decoration: InputDecoration(
@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
                                   v.isEmpty ? 'Fill Here Please' : null,
                               obscureText: observe,
                               style: TextStyle(color: MyColors.textColor),
-                              cursorColor: MyColors.priamryColor,
+                              cursorColor: MyColors.primaryColor,
                               decoration: InputDecoration(
                                   labelText: 'Password',
                                   suffixIcon: IconButton(
@@ -153,7 +153,7 @@ class _HomeState extends State<Home> {
                                   boxShadow: [
                                     BoxShadow(
                                       color:
-                                          MyColors.priamryColor.withOpacity(.8),
+                                          MyColors.primaryColor.withOpacity(.8),
                                       blurRadius: 15,
                                       offset: Offset(0, 6),
                                       spreadRadius: 1,
@@ -163,9 +163,9 @@ class _HomeState extends State<Home> {
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     colors: [
-                                      MyColors.backGradiantHighColor,
-                                      MyColors.backGradiantMediumColor,
-                                      MyColors.backGradiantLowColor,
+                                      MyColors.backGradientHighColor,
+                                      MyColors.backGradientMediumColor,
+                                      MyColors.backGradientLowColor,
                                     ],
                                     stops: [0.1, 0.5, 0.7],
                                   ),
@@ -182,7 +182,7 @@ class _HomeState extends State<Home> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => FoodSpec(),
+                                          builder: (context) => PageManager(),
                                         ),
                                       );
                                     }

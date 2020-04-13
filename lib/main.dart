@@ -34,7 +34,7 @@ class AppTheme {
       errorMaxLines: 1,
       helperMaxLines: 1,
       focusedBorder: UnderlineInputBorder(
-        borderSide: BorderSide(color: MyColors.priamryColor),
+        borderSide: BorderSide(color: MyColors.primaryColor),
       ),
       focusedErrorBorder: UnderlineInputBorder(
         borderSide: BorderSide(
@@ -55,5 +55,6 @@ class AppTheme {
       ),
     ),
     primaryColor: Colors.deepOrange[100],
+    iconTheme: IconThemeData(color: MyColors.textColor),
   );
 }
